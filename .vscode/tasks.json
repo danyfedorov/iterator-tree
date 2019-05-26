@@ -1,0 +1,52 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {  
+            "label": "Run all tests",
+            "type": "npm",
+            "script": "test:ci",
+            "group": "test"
+        },
+        {
+            "label": "tests for current file",
+            "type":"shell",
+            "command": "node",
+            "args": [
+                "./node_modules/.bin/jest",
+                "${file}"
+            ],
+            "presentation": {
+                "echo": true,
+                "reveal":"always",
+                "focus": false,
+                "panel":"dedicated"
+            },
+            "options": {
+                "env": {
+                    "MONGO_PORT": "27017",
+                    "DEBUG": "1"
+                }
+            },
+            "problemMatcher":[]
+        },
+        {
+            "label": "update test snapshots for current file",
+            "type":"shell",
+            "command": "node",
+            "args": [
+                "./node_modules/.bin/jest",
+                "-u",
+                "${file}"
+            ],
+            "presentation": {
+                "echo": true,
+                "reveal":"always",
+                "focus": false,
+                "panel":"dedicated"
+            },
+            "problemMatcher":[]
+        }
+    ]
+}

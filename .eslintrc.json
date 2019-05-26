@@ -1,0 +1,25 @@
+{
+  "extends": ["standard", "standard-react"],
+  "plugins": ["json", "prefer-arrow"],
+  "env": {
+    "jest": true
+  },
+  "rules": {
+    "quotes": ["error", "single", { "avoidEscape": true }],
+    "no-unused-vars": [
+      "error",
+      { "vars": "all", "args": "after-used", "ignoreRestSiblings": false }
+    ],
+    "arrow-parens": ["error", "always"],
+    "array-bracket-spacing": ["error", "always"],
+    "object-curly-spacing": ["error", "always"],
+    "prefer-arrow/prefer-arrow-functions": [
+      "warn",
+      {
+        "disallowPrototype": false,
+        "singleReturnOnly": true,
+        "classPropertiesAllowed": false
+      }
+    ]
+  }
+}

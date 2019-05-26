@@ -1,0 +1,41 @@
+{
+  // Use IntelliSense to learn about possible attributes.
+  // Hover to view descriptions of existing attributes.
+  // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Controller",
+      "program": "${workspaceFolder}/controller_server.js",
+      "args": ["8000", "${workspaceFolder}/../REWEB2/config_template.js"],
+      "env": {
+        "CONTROLLER_LOG": "on",
+        "CONTROLLER_LOG_DIR": "/tmp/controller-logs"
+      }
+    },
+    {
+      "name": "Tests",
+      "type": "node",
+      "request": "launch",
+      "args": [
+        "${workspaceRoot}/node_modules/.bin/jest",
+        "-c",
+        "${workspaceRoot}/jestConfigs.js",
+        "--runInBand",
+        "--forceExit",
+        "${file}"
+      ],
+      "console": "integratedTerminal",
+      "internalConsoleOptions": "neverOpen"
+    },
+    {
+      "name": "File",
+      "type": "node",
+      "request": "launch",
+      "args": ["${file}"],
+      "console": "integratedTerminal"
+    }
+  ]
+}

@@ -7,10 +7,10 @@ const stopTraversal = require('../utils/stopTraversal')
  * @param {Function} callback
  * @returns {undefined}
  */
-function travPre (iTree, callback) {
+function travPre(iTree, callback) {
   validateITree(iTree)
 
-  function recur (iTreeVertex) {
+  function recur(iTreeVertex) {
     callback(iTreeVertex)
     if (!stopTraversal(iTreeVertex)) {
       const hintChildren = iTreeVertex.children

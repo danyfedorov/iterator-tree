@@ -19,14 +19,7 @@
       "name": "Tests",
       "type": "node",
       "request": "launch",
-      "args": [
-        "${workspaceRoot}/node_modules/.bin/jest",
-        "-c",
-        "${workspaceRoot}/jestConfigs.js",
-        "--runInBand",
-        "--forceExit",
-        "${file}"
-      ],
+      "args": ["${workspaceRoot}/node_modules/.bin/jest", "--runInBand", "--forceExit", "${file}"],
       "console": "integratedTerminal",
       "internalConsoleOptions": "neverOpen"
     },
